@@ -1,3 +1,5 @@
+clc;
+clear all;
 Lambda = 0.85; % [um]
 MetricPrefixLambda = 1e-6;
 
@@ -27,3 +29,13 @@ Denominator_Eta = [];
 % Handlery dla funkcji
 psi_b = @(x,y) function_psi_b(x, y, OMEGA2_X, OMEGA2_Y);
 psi_f = @(x,y) function_psi_f(x, y, OMEGA2_F);
+psi_f_conj = @(x,y) conj(function_psi_f(x, y, OMEGA2_F));
+
+NumFunc = @(x,y) psi_b(x,y) .* psi_f_conj(x,y);
+
+% Obliczanie mianownika
+
+Numerator_Integral = integral2(NumFunc,-OMEGA2_F/2,OMEGA2_X/2,-OMEGA2_F/2,OMEGA2_F/2);
+AbsNumerator_Integral = abs(Numerator_Integral);
+
+Numerator_Eta = AbsNumerator_Integral .^ 2;

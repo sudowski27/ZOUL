@@ -11,7 +11,7 @@ ErrorTEST1 = abs(ExpectedVal - ValForTEST1);
 %disp(ErrorTEST1)
 assert( ErrorTEST1 < 0.1 , "TEST1 FAILED")
 disp("TEST1 PASSED")
-
+return
 %TEST2
 x = 1;
 y = 1;
