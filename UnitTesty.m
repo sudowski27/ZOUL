@@ -85,3 +85,14 @@ ErrorTEST7 = abs(ExpectedVal - ValForTEST7);
 assert(ErrorTEST7 < 1e-3, "TEST7 FAILED");
 disp("TEST7 PASSED")
 
+%TEST8
+OMEGA2_X = 1;
+N_0 = 1;
+Lambda = 1;
+ExpectedVal = 2*pi*N_0/Lambda;
+ExpectedVal = (ExpectedVal*(OMEGA2_X/2))^2;
+ExpectedVal = ExpectedVal / 2;
+ValForTEST8 = function_A(OMEGA2_X, N_0, Lambda);
+ErrorTEST8 = abs(ExpectedVal - ValForTEST8);
+assert(ErrorTEST8 < 1e-3, "TEST8 FAILED");
+disp("TEST8 PASSED");
