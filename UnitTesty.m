@@ -11,7 +11,7 @@ ErrorTEST1 = abs(ExpectedVal - ValForTEST1);
 %disp(ErrorTEST1)
 assert( ErrorTEST1 < 0.1 , "TEST1 FAILED")
 disp("TEST1 PASSED")
-return
+
 %TEST2
 x = 1;
 y = 1;
@@ -42,3 +42,23 @@ ValForTEST4 = function_psi_b(x,y,OMEGA2_X, OMEGA2_Y);
 ErrorTEST4 = abs(ExpectedVal - ValForTEST4);
 assert( ErrorTEST4 < 0.1 , "TEST4 FAILED")
 disp("TEST4 PASSED")
+
+%TEST5
+OMEGA2_F = 1;
+OMEGA2_X = 1;
+Lambda = 1;
+DeltaZ = 1;
+DeltaX = 1;
+
+ExpectedVal = OMEGA2_F./2 ./ (OMEGA2_X./2);
+ExpectedVal = ExpectedVal + (OMEGA2_X./2) ./ (OMEGA2_F./2);
+ExpectedVal = ExpectedVal .^ 2;
+ExpectedVal = ExpectedVal + Lambda.^2*DeltaZ.^2 ./ (pi.^2 .* (OMEGA2_X./2).^2 .* (OMEGA2_F./2).^2);
+ExpectedVal = sqrt(ExpectedVal);
+ExpectedVal = 1 ./ ExpectedVal;
+ExpectedVal = 2 .* ExpectedVal;
+ExpectedVal = ExpectedVal .* exp(-2 .* DeltaX.^2 ./ ((OMEGA2_F./2).^2 + (OMEGA2_X./2).^2));
+ValForTEST5 = function_eta_x(OMEGA2_F, OMEGA2_X, Lambda, DeltaZ, DeltaX);
+ErrorTEST5 = abs(ValForTEST5 - ExpectedVal);
+assert (ErrorTEST5 < 1e-3, "TEST5 FAILED")
+disp("TEST5 PASSED")
