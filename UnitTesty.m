@@ -73,3 +73,15 @@ ValForTEST6 = function_eta_y(OMEGA2_F, OMEGA2_Y, Lambda, DeltaZ, DeltaY);
 ErrorTEST6 = abs(ValForTEST6 - ExpectedVal);
 assert(ErrorTEST6 < 1e-3, "TEST6 FAILED")
 disp("TEST6 PASSED")
+
+%TEST7
+Omega2_F = 1;
+Omega2_X = 1;
+Lambda = 1;
+Delta_Teta = 1;
+ExpectedVal = 0.999248669;
+ValForTEST7 = function_eta_teta(Omega2_F, Omega2_X, Lambda, Delta_Teta);
+ErrorTEST7 = abs(ExpectedVal - ValForTEST7);
+assert(ErrorTEST7 < 1e-3, "TEST7 FAILED");
+disp("TEST7 PASSED")
+
