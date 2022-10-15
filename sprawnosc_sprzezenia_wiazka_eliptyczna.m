@@ -27,3 +27,10 @@ DeltaZ = DeltaZ * MetricPrefixDeltaZ;
 
 DeltaTeta = 0.7; % [stopnia]
 
+Lambda = 0.85; % [um]
+MetricPrefixLambda = 1e-6;
+Lambda = Lambda .* MetricPrefixLambda;
+
+% Obliczanie sprawności
+
+Eta_E = function_eta_e(Omega2_F, Omega2_X, Omega2_Y, Lambda, DeltaX, DeltaY, DeltaZ, DeltaTeta);

@@ -2,6 +2,7 @@ clc;
 clear all;
 Lambda = 0.85; % [um]
 MetricPrefixLambda = 1e-6;
+Lambda = Lambda .* MetricPrefixLambda;
 
 % GLOBAL VARIABLES
 global OMEGA2_F
