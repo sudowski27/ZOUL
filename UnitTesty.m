@@ -40,6 +40,5 @@ OMEGA2_Y = 4.5*1e-6;
 ExpectedVal = sqrt(2/(pi*OMEGA2_X/2*OMEGA2_Y/2)) * exp(-1/((OMEGA2_X/2)^2)) * exp(-1/((OMEGA2_Y/2)^2));
 ValForTEST4 = function_psi_b(x,y,OMEGA2_X, OMEGA2_Y);
 ErrorTEST4 = abs(ExpectedVal - ValForTEST4);
-disp(ValForTEST4)
 assert( ErrorTEST4 < 0.1 , "TEST4 FAILED")
 disp("TEST4 PASSED")
