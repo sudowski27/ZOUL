@@ -244,3 +244,88 @@ Legend3_3 = "\Delta_{x} = 3\mum";
 legend(Legend3_1, Legend3_2, Legend3_3);
 xlabel("Średnica modu włókna 2\omega_{F} [\mum]")
 ylabel("Straty sprzęgania \Phi_{tot} [dB]")
+
+%Case 4.1
+
+Omega2X = 2.5; % [um]
+MetricPrefixOmega2X = 1e-6;
+Omega2X = Omega2X * MetricPrefixOmega2X;
+
+Omega2F = 2.5; % [um]
+MetricPrefixOmega2F = 1e-6;
+Omega2F = Omega2F * MetricPrefixOmega2F;
+
+DeltaX = 0.5; % [um]
+MetricPrefixDeltaX = 1e-6;
+DeltaX = DeltaX * MetricPrefixDeltaX;
+
+DeltaZ = 1; % [um]
+MetricPrefixDeltaZ = 1e-6;
+DeltaZ = DeltaZ * MetricPrefixDeltaZ;
+
+DeltaTeta = 0.7; % [Stopnia]
+
+DeltaTeta = 0; % [Stopnia]
+
+DeltaX = 0; % [um]
+MetricPrefixDeltaX = 1e-6;
+DeltaX = DeltaX * MetricPrefixDeltaX;
+
+PHI_TOT_ARRAY_CASE4_1 = zeros(1,length(Omega2F_Array));
+for i = 1:length(Omega2F_Array)
+    Omega2F = Omega2F_Array(i);
+    PHI_TOT_ARRAY_CASE4_1(i) = function_phi_tot(Omega2F, Omega2X, DeltaX, DeltaZ, DeltaTeta, N_0, Lambda);
+end
+figure(4)
+plot(Omega2F_Array, PHI_TOT_ARRAY_CASE4_1, 'LineWidth', 2);
+hold on;
+Legend4_1 = "\Delta_{\Theta} = 0\circ";
+
+%Case 4.2
+DeltaX = 0.5; % [um]
+MetricPrefixDeltaX = 1e-6;
+DeltaX = DeltaX * MetricPrefixDeltaX;
+
+DeltaZ = 0; % [um]
+MetricPrefixDeltaZ = 1e-6;
+DeltaZ = DeltaZ * MetricPrefixDeltaZ;
+
+DeltaTeta = 0.7; % [Stopnia]
+
+PHI_TOT_ARRAY_CASE4_2 = zeros(1,length(Omega2F_Array));
+for i = 1:length(Omega2F_Array)
+    Omega2F = Omega2F_Array(i);
+    PHI_TOT_ARRAY_CASE4_2(i) = function_phi_tot(Omega2F, Omega2X, DeltaX, DeltaZ, DeltaTeta, N_0, Lambda);
+end
+plot(Omega2F_Array, PHI_TOT_ARRAY_CASE4_2, 'LineWidth', 2);
+hold on;
+Legend4_2 = "\Delta_{\Theta} = 0.7\circ";
+
+%Case 4.3
+DeltaX = 0.5; % [um]
+MetricPrefixDeltaX = 1e-6;
+DeltaX = DeltaX * MetricPrefixDeltaX;
+
+DeltaZ = 1; % [um]
+MetricPrefixDeltaZ = 1e-6;
+DeltaZ = DeltaZ * MetricPrefixDeltaZ;
+
+DeltaTeta = 3; % [Stopnia]
+
+Omega2X = 3.5; % [um]
+MetricPrefixOmega2X = 1e-6;
+Omega2X = Omega2X * MetricPrefixOmega2X;
+
+PHI_TOT_ARRAY_CASE4_3 = zeros(1,length(Omega2F_Array));
+for i = 1:length(Omega2F_Array)
+    Omega2F = Omega2F_Array(i);
+    PHI_TOT_ARRAY_CASE4_3(i) = function_phi_tot(Omega2F, Omega2X, DeltaX, DeltaZ, DeltaTeta, N_0, Lambda);
+end
+plot(Omega2F_Array, PHI_TOT_ARRAY_CASE4_3, 'LineWidth', 2);
+hold on;
+Legend4_3 = "\Delta_{\Theta} = 3\circ";
+
+legend(Legend4_1, Legend4_2, Legend4_3);
+xlabel("Średnica modu włókna 2\omega_{F} [\mum]")
+ylabel("Straty sprzęgania \Phi_{tot} [dB]")
+
