@@ -99,7 +99,7 @@ Legend1_3 = "2\omega_{x} = 7.5\mum";
 legend(Legend1_1, Legend1_2, Legend1_3);
 xlabel("Średnica modu włókna 2\omega_{F} [\mum]")
 ylabel("Straty sprzęgania \Phi_{tot} [dB]")
-
+title("Zmiana średnicy wiązki lasera")
 %Case 2.1
 Omega2X = 2.5; % [um]
 MetricPrefixOmega2X = 1e-6;
@@ -172,6 +172,7 @@ Legend2_3 = "\Delta_{z} = 100\mum";
 legend(Legend2_1, Legend2_2, Legend2_3);
 xlabel("Średnica modu włókna 2\omega_{F} [\mum]")
 ylabel("Straty sprzęgania \Phi_{tot} [dB]")
+title("Odsunięcie włókna od ogniskowej soczewki")
 
 %Case 3.1
 Omega2X = 2.5; % [um]
@@ -244,6 +245,7 @@ Legend3_3 = "\Delta_{x} = 3\mum";
 legend(Legend3_1, Legend3_2, Legend3_3);
 xlabel("Średnica modu włókna 2\omega_{F} [\mum]")
 ylabel("Straty sprzęgania \Phi_{tot} [dB]")
+title("Rozsunięcie osi soczewki i włókna")
 
 %Case 4.1
 
@@ -328,4 +330,5 @@ Legend4_3 = "\Delta_{\Theta} = 3\circ";
 legend(Legend4_1, Legend4_2, Legend4_3);
 xlabel("Średnica modu włókna 2\omega_{F} [\mum]")
 ylabel("Straty sprzęgania \Phi_{tot} [dB]")
+title("Odchylenie osi włókna od soczewki o pewien kąt")
 
