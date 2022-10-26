@@ -1,7 +1,7 @@
 clear all;
 clc;
 
-Omega2X = 2.5; % [um]
+Omega2X = 3.5; % [um]
 MetricPrefixOmega2X = 1e-6;
 Omega2X = Omega2X * MetricPrefixOmega2X;
 
@@ -101,7 +101,7 @@ xlabel("Średnica modu włókna 2\omega_{F} [\mum]")
 ylabel("Straty sprzęgania \Phi_{tot} [dB]")
 title("Zmiana średnicy wiązki lasera")
 %Case 2.1
-Omega2X = 2.5; % [um]
+Omega2X = 3.5; % [um]
 MetricPrefixOmega2X = 1e-6;
 Omega2X = Omega2X * MetricPrefixOmega2X;
 
@@ -175,7 +175,7 @@ ylabel("Straty sprzęgania \Phi_{tot} [dB]")
 title("Odsunięcie włókna od ogniskowej soczewki")
 
 %Case 3.1
-Omega2X = 2.5; % [um]
+Omega2X = 3.5; % [um]
 MetricPrefixOmega2X = 1e-6;
 Omega2X = Omega2X * MetricPrefixOmega2X;
 
@@ -249,7 +249,7 @@ title("Rozsunięcie osi soczewki i włókna")
 
 %Case 4.1
 
-Omega2X = 2.5; % [um]
+Omega2X = 3.5; % [um]
 MetricPrefixOmega2X = 1e-6;
 Omega2X = Omega2X * MetricPrefixOmega2X;
 
