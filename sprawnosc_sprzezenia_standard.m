@@ -36,7 +36,7 @@ NumFunc = @(x,y) psi_b(x,y) .* psi_f_conj(x,y);
 
 % Obliczanie mianownika
 
-Numerator_Integral = integral2(NumFunc,-OMEGA2_F/2,OMEGA2_X/2,-OMEGA2_F/2,OMEGA2_F/2);
+Numerator_Integral = integral2(NumFunc,-OMEGA2_F./2,OMEGA2_F./2,-OMEGA2_F./2,OMEGA2_F./2);
 AbsNumerator_Integral = abs(Numerator_Integral);
 
 Numerator_Eta = AbsNumerator_Integral .^ 2;
@@ -47,10 +47,9 @@ Numerator_Eta = AbsNumerator_Integral .^ 2;
 psi_b_abs_squere = @(x,y) abs(psi_b(x,y)).^2;
 psi_f_abs_squere = @(x,y) abs(psi_f(x,y)).^2;
 
-Denominator_Integral_Left = integral2(psi_b_abs_squere,-OMEGA2_F/2,OMEGA2_X/2,-OMEGA2_F/2,OMEGA2_X/2);
-Denominator_Integral_Right = integral2(psi_f_abs_squere,-OMEGA2_F/2,OMEGA2_X/2,-OMEGA2_F/2,OMEGA2_X/2);
+Denominator_Integral_Left = integral2(psi_b_abs_squere,-OMEGA2_F/2,OMEGA2_F/2,-OMEGA2_F/2,OMEGA2_F/2);
+Denominator_Integral_Right = integral2(psi_f_abs_squere,-OMEGA2_F/2,OMEGA2_F/2,-OMEGA2_F/2,OMEGA2_F/2);
 
 Denominator_Eta = Denominator_Integral_Left * Denominator_Integral_Right;
 
 Eta = Numerator_Eta ./ Denominator_Eta;
-
