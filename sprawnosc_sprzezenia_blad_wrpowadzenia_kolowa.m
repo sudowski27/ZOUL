@@ -105,10 +105,6 @@ Omega2X = 3.5; % [um]
 MetricPrefixOmega2X = 1e-6;
 Omega2X = Omega2X * MetricPrefixOmega2X;
 
-Omega2F = 2.5; % [um]
-MetricPrefixOmega2F = 1e-6;
-Omega2F = Omega2F * MetricPrefixOmega2F;
-
 DeltaX = 0; % [um]
 MetricPrefixDeltaX = 1e-6;
 DeltaX = DeltaX * MetricPrefixDeltaX;
@@ -116,8 +112,6 @@ DeltaX = DeltaX * MetricPrefixDeltaX;
 DeltaZ = 1; % [um]
 MetricPrefixDeltaZ = 1e-6;
 DeltaZ = DeltaZ * MetricPrefixDeltaZ;
-
-DeltaTeta = 0.7; % [Stopnia]
 
 PHI_TOT_ARRAY_CASE2_1 = zeros(1,length(Omega2F_Array));
 for i = 1:length(Omega2F_Array)
@@ -133,10 +127,6 @@ Legend2_1 = "\Delta_{z} = 1\mum";
 DeltaZ = 10; % [um]
 MetricPrefixDeltaZ = 1e-6;
 DeltaZ = DeltaZ * MetricPrefixDeltaZ;
-
-DeltaX = 0.5; % [um]
-MetricPrefixDeltaX = 1e-6;
-DeltaX = DeltaX * MetricPrefixDeltaX;
 
 DeltaTeta = 0; % [Stopnia]
 
@@ -154,7 +144,6 @@ DeltaZ = 100; % [um]
 MetricPrefixDeltaZ = 1e-6;
 DeltaZ = DeltaZ * MetricPrefixDeltaZ;
 
-DeltaTeta = 0.7; % [Stopnia]
 
 Omega2X = 3.5; % [um]
 MetricPrefixOmega2X = 1e-6;
@@ -248,30 +237,20 @@ ylabel("Straty sprzęgania \Phi_{tot} [dB]")
 title("Rozsunięcie osi soczewki i włókna")
 
 %Case 4.1
+DeltaX = 0.0; % [um]
+MetricPrefixDeltaX = 1e-6;
+DeltaX = DeltaX * MetricPrefixDeltaX;
+
+DeltaTeta = 0; % [Stopnia]
 
 Omega2X = 3.5; % [um]
 MetricPrefixOmega2X = 1e-6;
 Omega2X = Omega2X * MetricPrefixOmega2X;
 
-Omega2F = 2.5; % [um]
-MetricPrefixOmega2F = 1e-6;
-Omega2F = Omega2F * MetricPrefixOmega2F;
-
-DeltaX = 0.5; % [um]
-MetricPrefixDeltaX = 1e-6;
-DeltaX = DeltaX * MetricPrefixDeltaX;
-
-DeltaZ = 1; % [um]
+DeltaZ = 0; % [um]
 MetricPrefixDeltaZ = 1e-6;
 DeltaZ = DeltaZ * MetricPrefixDeltaZ;
 
-DeltaTeta = 0.7; % [Stopnia]
-
-DeltaTeta = 0; % [Stopnia]
-
-DeltaX = 0; % [um]
-MetricPrefixDeltaX = 1e-6;
-DeltaX = DeltaX * MetricPrefixDeltaX;
 
 PHI_TOT_ARRAY_CASE4_1 = zeros(1,length(Omega2F_Array));
 for i = 1:length(Omega2F_Array)
@@ -284,14 +263,6 @@ hold on;
 Legend4_1 = "\Delta_{\Theta} = 0\circ";
 
 %Case 4.2
-DeltaX = 0.5; % [um]
-MetricPrefixDeltaX = 1e-6;
-DeltaX = DeltaX * MetricPrefixDeltaX;
-
-DeltaZ = 0; % [um]
-MetricPrefixDeltaZ = 1e-6;
-DeltaZ = DeltaZ * MetricPrefixDeltaZ;
-
 DeltaTeta = 0.7; % [Stopnia]
 
 PHI_TOT_ARRAY_CASE4_2 = zeros(1,length(Omega2F_Array));
@@ -304,19 +275,7 @@ hold on;
 Legend4_2 = "\Delta_{\Theta} = 0.7\circ";
 
 %Case 4.3
-DeltaX = 0.5; % [um]
-MetricPrefixDeltaX = 1e-6;
-DeltaX = DeltaX * MetricPrefixDeltaX;
-
-DeltaZ = 1; % [um]
-MetricPrefixDeltaZ = 1e-6;
-DeltaZ = DeltaZ * MetricPrefixDeltaZ;
-
 DeltaTeta = 3; % [Stopnia]
-
-Omega2X = 3.5; % [um]
-MetricPrefixOmega2X = 1e-6;
-Omega2X = Omega2X * MetricPrefixOmega2X;
 
 PHI_TOT_ARRAY_CASE4_3 = zeros(1,length(Omega2F_Array));
 for i = 1:length(Omega2F_Array)
