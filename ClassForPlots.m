@@ -251,5 +251,44 @@ classdef ClassForPlots
 
             title([TitleLine1, TitleLine2, TitleLine3]);
         end
+
+        function Draw_Chart7(obj)
+            L1 = 15; % [km]
+            BL = [100, 500, 1000]; % [MHzkm]
+            R0 = 50; % [Mbit/s]
+            time = 0:1e-2:5;
+            s2_samples = zeros(1, length(time));
+            LegendStringArray = [];
+            figure(7)
+            for BL_scalar = BL
+                T1_scalar = T1(R0, BL_scalar, L1, obj.LC);
+                for i = 1:length(time)
+                    s2_samples(i) = Fourier_inversion_s2(T1_scalar, obj.T0, obj.T2, time(i));
+                end
+                plot(time, s2_samples, 'LineWidth', 2)
+                hold on
+                StringForLegend1 = "B_{L}=";
+                StringForLegend2 = int2str(BL_scalar);
+                StringForLegend3 = " MHzkm";
+
+                StringForLegendStringArray = append(StringForLegend1, StringForLegend2, StringForLegend3);
+                LegendStringArray = [LegendStringArray, StringForLegendStringArray];
+            end
+            % Labels
+            XlabelString = "czas t [s] ";
+            xlabel(XlabelString);
+            YlabelString = "Sygnał wyjściowy";
+            ylabel(YlabelString);
+
+            % Legend
+            legend(LegendStringArray);
+
+            % Title
+            TitleLine1 = "Transformata odwrotna Fouriera s_{2}(t) dla różnych długości pasma";
+            TitleLine2 = "B_{L}=100, 500, 1000 MHzkm:";
+            TitleLine3 = "przy R_{0}=50Mbit/s; L_{1}=15 km";
+
+            title([TitleLine1, TitleLine2, TitleLine3]);
+        end
     end
 end
