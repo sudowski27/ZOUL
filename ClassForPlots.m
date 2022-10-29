@@ -32,11 +32,31 @@ classdef ClassForPlots
             [~, S2_samples] = Receiver(obj.omega_samples, obj.T2, S1_samples);
 
             % plotting
-            plot(obj.omega_samples, H0_samples);
+            plot(obj.omega_samples, H0_samples, 'LineWidth', 2);
 
             hold on
 
-            plot(obj.omega_samples, S2_samples);
+            plot(obj.omega_samples, S2_samples, 'LineWidth', 2);
+
+            zeros_array = zeros(1, length(obj.omega_samples));
+            plot(obj.omega_samples, zeros_array, '--', 'LineWidth', 1);
+
+            % Legend and Labels
+            LegendH0 = "H_{0}(\omega)";
+            LegendS2 = "S_{2}(\omega)";
+            legend(LegendH0, LegendS2);
+
+            XlabelString = "Znormalizowana wartość częstości \omega ";
+            xlabel(XlabelString);
+            YlabelString = "Sygnał wyjściowy";
+            ylabel(YlabelString);
+
+            % Title
+            TitleString = "Porównanie sygnału wyjściowego H_{0}(\omega) z sygnałem wyjściowym";
+            TitleString2 = " S_{2}(\omega)";
+            TitleString_2Line = "przy L_{1}=15km; R_{0}=50Mbit/s; B_{L}=500MHzkm";
+            TitleString = append(TitleString, TitleString2);
+            title([TitleString, TitleString_2Line]);
         end           
     end
 end
