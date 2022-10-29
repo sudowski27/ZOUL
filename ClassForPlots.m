@@ -91,7 +91,7 @@ classdef ClassForPlots
             legend(LegendStringArray);
 
             % Title
-            TitleLine1 = "sygnał wyjściowy S_{2}(\omega) dla różnych szybkości transmisji bitów";
+            TitleLine1 = "Sygnał wyjściowy S_{2}(\omega) dla różnych szybkości transmisji bitów";
             TitleLine2 = "R_{0}=10, 50, 100, 200 Mbit/s:";
             TitleLine3 = "przy L_{1}=15km; B_{L}=500 MHzkm";
 
