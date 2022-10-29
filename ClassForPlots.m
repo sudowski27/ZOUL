@@ -6,11 +6,15 @@ classdef ClassForPlots
         LC = 7  % [km]
         
         omega_samples
+
+        H0_samples
     end
 
     methods
         function obj = ClassForPlots()
            obj.omega_samples = 0: 1e-4 : 2 .* pi / obj.T2;
+
+           obj.H0_samples = Transmitter(obj.omega_samples, obj.T0);
         end
 
         function Draw_Chart1(obj)
@@ -20,19 +24,16 @@ classdef ClassForPlots
 
             figure(1)
 
-            % Calculationg samples for H0(omega)
-            H0_samples = Transmitter(obj.omega_samples, obj.T0);
-
             % Calculating samples for S1(omega)
             % ( required for calculation S2(omega) )
             T1_scalar = T1(R0, BL, L1, obj.LC);
-            [~, S1_samples] = OpticalFiber(obj.omega_samples, T1_scalar, H0_samples);
+            [~, S1_samples] = OpticalFiber(obj.omega_samples, T1_scalar, obj.H0_samples);
 
             % Calculating samples for S2(omega)
             [~, S2_samples] = Receiver(obj.omega_samples, obj.T2, S1_samples);
 
             % plotting
-            plot(obj.omega_samples, H0_samples, 'LineWidth', 2);
+            plot(obj.omega_samples, obj.H0_samples, 'LineWidth', 2);
 
             hold on
 
@@ -57,6 +58,44 @@ classdef ClassForPlots
             TitleString_2Line = "przy L_{1}=15km; R_{0}=50Mbit/s; B_{L}=500MHzkm";
             TitleString = append(TitleString, TitleString2);
             title([TitleString, TitleString_2Line]);
-        end           
+        end
+
+        function Draw_Chart2(obj)
+            L1 = 15;  % [km]
+            BL = 500;  % [MHzkm]
+            R0 = [10, 50, 100, 200];  % [Mbit/s]
+
+            LegendStringArray = []
+            figure(2)
+            for R0_scalar = R0
+                T1_scalar = T1(R0_scalar, BL, L1, obj.LC);
+                [~, S1_samples] = OpticalFiber(obj.omega_samples, T1_scalar, obj.H0_samples);
+
+                % plotting
+                plot(obj.omega_samples, S1_samples, 'LineWidth', 2)
+                StringForLegend1 = "R_{0}=";
+                StringForLegend2 = int2str(R0_scalar);
+                StringForLegend3 = " Mbit/s";
+
+                StringForLegendStringArray = append(StringForLegend1, StringForLegend2, StringForLegend3);
+                LegendStringArray = [LegendStringArray, StringForLegendStringArray];
+                hold on
+            end
+            % Labels
+            XlabelString = "Znormalizowana wartość częstości \omega ";
+            xlabel(XlabelString);
+            YlabelString = "Sygnał wyjściowy";
+            ylabel(YlabelString);
+
+            % Legend
+            legend(LegendStringArray);
+
+            % Title
+            TitleLine1 = "sygnał wyjściowy S_{2}(\omega) dla różnych szybkości transmisji bitów";
+            TitleLine2 = "R_{0}=10, 50, 100, 200 Mbit/s:";
+            TitleLine3 = "przy L_{1}=15km; B_{L}=500 MHzkm";
+
+            title([TitleLine1, TitleLine2, TitleLine3]);
+        end
     end
 end
