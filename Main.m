@@ -13,3 +13,6 @@ ObjectForPlotting.Draw_Chart2();
 
 % Rysuj Wykres_3
 ObjectForPlotting.Draw_Chart3();
+
+
+ObjectForPlotting.Draw_Chart4();
