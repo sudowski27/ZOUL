@@ -213,5 +213,43 @@ classdef ClassForPlots
 
             title([TitleLine1, TitleLine2, TitleLine3]);
         end
+
+        function Draw_Chart6(obj)
+            L1 = 15; % [km]
+            BL = [100, 500, 1000]; % [MHzkm]
+            R0 = 50; % [Mbit/s]
+            LegendStringArray = [];
+            figure(6)
+            for BL_scalar = BL
+                T1_scalar = T1(R0, BL_scalar, L1, obj.LC);
+                [~, S1_samples] = OpticalFiber(obj.omega_samples, T1_scalar, obj.H0_samples);
+                [~, S2_samples] = Receiver(obj.omega_samples,obj.T2, S1_samples);
+
+                plot(obj.omega_samples, S2_samples, 'LineWidth', 2)
+
+                StringForLegend1 = "B_{L}=";
+                StringForLegend2 = int2str(BL_scalar);
+                StringForLegend3 = " MHzkm";
+
+                StringForLegendStringArray = append(StringForLegend1, StringForLegend2, StringForLegend3);
+                LegendStringArray = [LegendStringArray, StringForLegendStringArray];
+                hold on
+            end
+            % Labels
+            XlabelString = "Znormalizowana wartość częstości \omega ";
+            xlabel(XlabelString);
+            YlabelString = "Sygnał wyjściowy";
+            ylabel(YlabelString);
+
+            % Legend
+            legend(LegendStringArray);
+
+            % Title
+            TitleLine1 = "Sygnał wyjściowy S_{2}(\omega) dla różnych długości pasma";
+            TitleLine2 = "B_{L}=100, 500, 1000 MHzkm:";
+            TitleLine3 = "przy R_{0}=50Mbit/s; L_{1}=15 km";
+
+            title([TitleLine1, TitleLine2, TitleLine3]);
+        end
     end
 end

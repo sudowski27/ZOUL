@@ -19,3 +19,6 @@ ObjectForPlotting.Draw_Chart4();
 
 % Rysuj Wykres_5
 ObjectForPlotting.Draw_Chart5();
+
+% Rysuj Wykres_6
+ObjectForPlotting.Draw_Chart6()
