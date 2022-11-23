@@ -121,7 +121,7 @@ classdef ClassForPlots
                 LegendStringArray = [LegendStringArray, StringForLegendStringArray];
             end
             % Labels
-            XlabelString = "czas t [s] ";
+            XlabelString = "czas t";
             xlabel(XlabelString);
             YlabelString = "Sygnał wyjściowy";
             ylabel(YlabelString);
@@ -169,7 +169,7 @@ classdef ClassForPlots
 
             % Title
             TitleLine1 = "Sygnał wyjściowy S_{2}(\omega) dla różnych długości włókna";
-            TitleLine2 = "L_{1}=10, 15, 20, 25 Mbit/s:";
+            TitleLine2 = "L_{1}=10, 15, 20, 25 km:";
             TitleLine3 = "przy R_{0}=50Mbit/s; B_{L}=500 MHzkm";
 
             title([TitleLine1, TitleLine2, TitleLine3]);
@@ -198,7 +198,7 @@ classdef ClassForPlots
                 LegendStringArray = [LegendStringArray, StringForLegendStringArray];
             end
             % Labels
-            XlabelString = "czas t [s] ";
+            XlabelString = "czas t";
             xlabel(XlabelString);
             YlabelString = "Sygnał wyjściowy";
             ylabel(YlabelString);
@@ -208,7 +208,7 @@ classdef ClassForPlots
 
             % Title
             TitleLine1 = "Transformata odwrotna Fouriera s_{2}(t) dla różnych długości włókna";
-            TitleLine2 = "L_{1}=10, 15, 20, 25 Mbit/s:";
+            TitleLine2 = "L_{1}=10, 15, 20, 25 km:";
             TitleLine3 = "przy R_{0}=50Mbit/s; B_{L}=500 MHzkm";
 
             title([TitleLine1, TitleLine2, TitleLine3]);
@@ -275,7 +275,7 @@ classdef ClassForPlots
                 LegendStringArray = [LegendStringArray, StringForLegendStringArray];
             end
             % Labels
-            XlabelString = "czas t [s] ";
+            XlabelString = "czas t";
             xlabel(XlabelString);
             YlabelString = "Sygnał wyjściowy";
             ylabel(YlabelString);
