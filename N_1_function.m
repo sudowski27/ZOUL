@@ -5,7 +5,7 @@ function N_1 = N_1_function(r_1, r_2)
 
     second_fraction_in_brackets_numerator = 1 - r_2.^2;
     second_fraction_in_brackets_denominator = r_2;
-    second_fraction_in_brackets = second_fraction_in_brackets_numerator ./ second_fraction_in_brackets_denomiantor;
+    second_fraction_in_brackets = second_fraction_in_brackets_numerator ./ second_fraction_in_brackets_denominator;
 
     value_in_brackets = first_fraction_in_brackets + second_fraction_in_brackets;
 
