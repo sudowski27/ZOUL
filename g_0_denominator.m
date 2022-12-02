@@ -5,5 +5,5 @@ function integral_ans = g_0_denominator(L_1, r_1, r_2, alpha_s, alpha_l2, L_2,P_
 
 	bare_integral = integral(fun, zmin, zmax);
 
-	integral = 2 .* bare_integral;
+	integral_ans = 2 .* bare_integral;
 end
