@@ -4,9 +4,9 @@ function arg = arg_for_C_integral_function(alpha_s, L1, r_1, r_2, alpha_l2, L2, 
 	local_gamma_1 = gamma_1_function(L1, r_1, r_2, alpha_s, alpha_l2, L2);
 	local_gamma_2 = gamma_2_function(alpha_s, alpha_l2);
 	
-	abs_of_f_R2 = abs(f_R2_function(local_gamma_1, local_gamma_2, L1, z))
+	abs_of_f_R2 = abs(f_R2_function(local_gamma_1, local_gamma_2, L1, z));
 
-	abs_of_f_S2 = abs(f_S2_function(r_2, local_gamma_1, local_gamma_2, L1, z))
+	abs_of_f_S2 = abs(f_S2_function(r_2, local_gamma_1, local_gamma_2, L1, z));
 
 	square_of_abs_of_f_R2 = abs_of_f_R2.^2;
 
