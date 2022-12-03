@@ -152,3 +152,53 @@ title({str_for_title_1;
     str_for_title_7});
 xlabel('g_0L')
 ylabel("P_{out} / P_{sg}")
+
+% Wykres 4
+number_of_figure = 4;
+Pout_Psg_ratio = 0:0.001:0.4;
+L_1 = 7e-2;  % 7 [cm]
+L = 12e-2;  % 12 [cm]
+L_2 = L - L_1;
+
+Beta = 5;
+alpha_s = 1 ./ L_1;
+alpha_2l = 0.1 ./ L_2;
+alpha_1l = 0.1 ./ L_1;
+r_1 = 1;
+
+r_2(1)=0.9;
+r_2(2)=0.8;
+r_2(3)=0.7;
+r_2(4)=0.6;
+
+figure(number_of_figure)
+% Inicjacja tablic zerami
+g_0 = zeros(1, length(Pout_Psg_ratio));
+g_0L = zeros(1, length(Pout_Psg_ratio));
+
+for i = 1:length(r_2)
+	for j = 1:length(Pout_Psg_ratio)
+		g_0(j) = g_0_function(r_1, r_2(i), alpha_s, L_1, alpha_2l, L_2, alpha_1l, L, Pout_Psg_ratio(j), Beta);
+        g_0L(j) = g_0(j) .* L;
+	end
+    plot(g_0L, Pout_Psg_ratio,'LineWidth', 2)
+    hold on
+end
+
+legend('r_2 = 0.9', 'r_2 = 0.8','r_2 = 0.7','r_2 = 0.6')
+str_for_title_1 = 'Wykres 4';
+str_for_title_2 = 'Zmiana parametru r_2';
+str_for_title_3 = '\beta=5';
+str_for_title_4 = "\alpha_{s}=1/L_2";
+str_for_title_5 = "\alpha_{l2}=0.1/L_{2}";
+str_for_title_6 = "\alpha_{l1}=0.1/L_1";
+str_for_title_7 = "L_1=7cm";
+title({str_for_title_1;
+    str_for_title_2;
+    str_for_title_3;
+    str_for_title_4;
+    str_for_title_5;
+    str_for_title_6;
+    str_for_title_7});
+xlabel('g_0L')
+ylabel("P_{out} / P_{sg}")
