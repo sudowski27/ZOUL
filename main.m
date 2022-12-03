@@ -111,7 +111,7 @@ L = 12e-2;  % 12 [cm]
 L_2 = L - L_1;
 
 Beta = 5;
-alpha_s = 1 ./ L_1;
+alpha_s = 1 ./ L_2;
 alpha_2l = 0.1 ./ L_2;
 r_2 = 0.9;
 r_1 = 1;
@@ -161,7 +161,7 @@ L = 12e-2;  % 12 [cm]
 L_2 = L - L_1;
 
 Beta = 5;
-alpha_s = 1 ./ L_1;
+alpha_s = 1 ./ L_2;
 alpha_2l = 0.1 ./ L_2;
 alpha_1l = 0.1 ./ L_1;
 r_1 = 1;
