@@ -22,11 +22,31 @@ Beta(4)=7;
 Beta(5)=9;
 
 figure(number_of_figure)
+% Inicjacja tablic zerami
+g_0 = zeros(1, length(Beta));
+g_0L = zeros(1, length(Beta));
+
 for i = 1:length(Beta)
 	for j = 1:length(Pout_Psg_ratio)
 		g_0(j) = g_0_function(r_1, r_2, alpha_s, L_1, alpha_2l, L_2, alpha_1l, L, Pout_Psg_ratio(j), Beta(i));
+        g_0L(j) = g_0(j) .* L;
 	end
-    plot(g_0, Pout_Psg_ratio,'LineWidth', 2)
+    plot(g_0L, Pout_Psg_ratio,'LineWidth', 2)
     hold on
 end
+
 legend('\beta = 1', '\beta = 3','\beta = 5','\beta = 7','\beta = 9')
+str_for_title_1 = 'Wykres 1';
+str_for_title_2 = 'Zmiana parametru \beta';
+str_for_title_3 = '\alpha_{s}=1\divL_{1}';
+str_for_title_4 = "\alpha_{l1}=0.1\divL_{1}";
+str_for_title_5 = "\alpha_{l2}=0.1\divL_{2}";
+str_for_title_6 = "r_{2}=0.9";
+str_for_title_7 = "L_1=7cm";
+title({str_for_title_1;
+    str_for_title_2;
+    str_for_title_3;
+    str_for_title_4;
+    str_for_title_5;
+    str_for_title_6;
+    str_for_title_7});
