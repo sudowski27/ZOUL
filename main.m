@@ -23,8 +23,8 @@ Beta(5)=9;
 
 figure(number_of_figure)
 % Inicjacja tablic zerami
-g_0 = zeros(1, length(Beta));
-g_0L = zeros(1, length(Beta));
+g_0 = zeros(1, length(Pout_Psg_ratio));
+g_0L = zeros(1, length(Pout_Psg_ratio));
 
 for i = 1:length(Beta)
 	for j = 1:length(Pout_Psg_ratio)
@@ -50,3 +50,5 @@ title({str_for_title_1;
     str_for_title_5;
     str_for_title_6;
     str_for_title_7});
+xlabel('g_0L')
+ylabel("P_{out} / P_{sg}")
